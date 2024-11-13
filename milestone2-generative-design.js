@@ -7,8 +7,8 @@ let width = context.canvas.width;
 let height = context.canvas.height;
 
 // Coordinates for the cross lines
-let x = width / 2;
-let y = height / 2;
+let x = width;
+let y = height;
 
 // First draw the background circles
 drawRandomCircles();
@@ -19,6 +19,10 @@ function drawLine() {
 	context.strokeStyle = "black";
 	Utils.drawLine(x, 0, x, height);
 	Utils.drawLine(0, y, width, y);
+	for (let i = 0; i < 10000; i++) {
+		let x = i * 100;
+		let y = i * 100;
+	}
 }
 
 function drawRandomCircles() {
