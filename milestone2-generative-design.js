@@ -17,7 +17,7 @@ drawLine();
 function drawLine() {
 	for (let x = 0, y = 0; x < width || y < height; x += 100, y += 100) {
 		context.lineWidth = 50;
-		Utils.drawLine(x, y, width, y);
+		Utils.drawLine(-25, y, width, y);
 		Utils.drawLine(x, y, x, height);
 	}
 }
