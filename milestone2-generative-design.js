@@ -15,13 +15,9 @@ drawRandomCircles();
 drawLine();
 
 function drawLine() {
-	context.lineWidth = 50;
-	context.strokeStyle = "black";
-	Utils.drawLine(x, 0, x, height);
-	Utils.drawLine(0, y, width, y);
-	for (let i = 0; i < 10000; i++) {
-		let x = i * 100;
-		let y = i * 100;
+	for (let y = 100; y < height; y += 100) {
+		context.lineWidth = 50;
+		Utils.drawLine(0, y, width, y);
 	}
 }
 
@@ -30,12 +26,12 @@ function drawRandomCircles() {
 	context.fillStyle = "white";
 	context.fillRect(0, 0, width, height); // Clear and fill the canvas
 
-	for (let i = 0; i < 10000; i++) {
+	for (let i = 0; i < 1000; i++) {
 		let x = Math.random() * width;
 		let y = Math.random() * height;
 
 		context.fillStyle = Utils.hsl(Math.random() * 360, 50, 50);
 
-		Utils.fillCircle(x, y, 10);
+		Utils.fillCircle(x, y, 45);
 	}
 }
