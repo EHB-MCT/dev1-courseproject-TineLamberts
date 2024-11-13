@@ -19,6 +19,10 @@ function drawLine() {
 		context.lineWidth = 50;
 		Utils.drawLine(0, y, width, y);
 	}
+	for (let x = 100; x < width; x += 100) {
+		context.lineWidth = 50;
+		Utils.drawLine(x, 0, x, height);
+	}
 }
 
 function drawRandomCircles() {
