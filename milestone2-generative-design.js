@@ -15,12 +15,9 @@ drawRandomCircles();
 drawLine();
 
 function drawLine() {
-	for (let y = 100; y < height; y += 100) {
+	for (let x = 0, y = 0; x < width || y < height; x += 100, y += 100) {
 		context.lineWidth = 50;
 		Utils.drawLine(0, y, width, y);
-	}
-	for (let x = 100; x < width; x += 100) {
-		context.lineWidth = 50;
 		Utils.drawLine(x, 0, x, height);
 	}
 }
