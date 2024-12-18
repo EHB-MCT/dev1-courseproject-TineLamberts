@@ -6,19 +6,13 @@ import * as Utils from "../../Scripts/utils.js";
 let width = context.canvas.width;
 let height = context.canvas.height;
 
+window.onmousedown = click;
+
 let x = width;
 let y = height;
 
-drawRandomCircles();
 drawLine();
-
-function drawLine() {
-	for (let x = 0, y = 0; x < width || y < height; x += 100, y += 100) {
-		context.lineWidth = 50;
-		Utils.drawLine(x, -25, width, y);
-		Utils.drawLine(-25, y, x, height);
-	}
-}
+drawRandomCircles();
 
 function drawRandomCircles() {
 	context.fillStyle = "white";
@@ -31,5 +25,24 @@ function drawRandomCircles() {
 		context.fillStyle = Utils.hsl(Math.random() * 360, 50, 50);
 
 		Utils.fillCircle(x, y, 45);
+	}
+}
+
+/**
+ *
+ * @param {MouseEvent} e
+ */
+
+function click(e) {
+	console.log(e.pageX + " " + e.pageY);
+	drawLine();
+}
+
+function drawLine() {
+	for (let x = 0, y = 0; x < width || y < height; x += 100, y += 100) {
+		context.lineWidth = 50;
+		//kleiner maken
+		Utils.drawLine(x, 0, width, y);
+		Utils.drawLine(0, y, x, height);
 	}
 }
