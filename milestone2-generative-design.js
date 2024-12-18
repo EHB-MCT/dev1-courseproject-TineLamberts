@@ -12,8 +12,8 @@ let height = context.canvas.height;
 window.onmousedown = click;
 window.onmousemove = move;
 
-let x = width;
-let y = height;
+let x = 300;
+let y = 200;
 
 drawSpace();
 
@@ -21,11 +21,10 @@ drawSpace();
 
 drawSpace();
 function drawSpace() {
-	//geschreven door chatGPT
+	//written by chatGPT
 	context.save();
 	context.translate(canvas.width - 300, canvas.height - 300);
 
-	//Zelf geschreven
 	context.fillStyle = "black";
 	context.beginPath();
 	context.rect(0, 0, 300, 300);
@@ -49,6 +48,8 @@ function drawSpace() {
 	context.restore();
 }
 
+//Drawing circles
+
 /**
  *
  * @param {MouseEvent} eventData
@@ -71,6 +72,8 @@ function drawRandomCircles() {
 		Utils.fillCircle(x, y, 30);
 	}
 }
+
+//Drawing lines
 
 /**
  *
